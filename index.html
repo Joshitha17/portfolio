@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mantharapu Joshitha Maha Lakshmi - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#3b82f6',secondary:'#64748b'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background-color: #2a0a5e; /* Fallback color for hero section - ensures text is readable */
+            background-image: url('https://readdy.ai/api/search-image?query=modern%20tech%20background%20with%20gradient%20blue%20to%20purple%2C%20abstract%20digital%20technology%20pattern%2C%20clean%20minimalist%20design%2C%20professional%20looking%2C%20suitable%20for%20portfolio%20website%2C%20light%20on%20the%20right%20side%20for%20text%20readability%2C%20darker%20on%20the%20left&width=1920&height=1080&seq=hero123&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1);
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1);
+        }
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1);
+        }
+        input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            background-color: #fff;
+            border: 2px solid #3b82f6;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            outline: none;
+        }
+        input[type="checkbox"]:checked {
+            background-color: #3b82f6;
+        }
+        input[type="checkbox"]:checked::after {
+            content: "✓";
+            color: white;
+            font-size: 14px;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e5e7eb;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            background-color: #3b82f6;
+            transition: width 0.5s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="text-2xl font-semibold text-gray-800">
+                Mantharapu <span class="text-primary">Joshitha</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-gray-600 hover:text-primary transition-colors">About</a>
+                <a href="#skills" class="text-gray-600 hover:text-primary transition-colors">Skills</a>
+                <a href="#projects" class="text-gray-600 hover:text-primary transition-colors">Projects</a>
+                <a href="#certifications" class="text-gray-600 hover:text-primary transition-colors">Certifications</a>
+                <a href="#contact" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+            </div>
+            
+            <button id="mobile-menu-button" class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-gray-500 focus:outline-none">
+                <i class="ri-menu-line ri-lg"></i>
+            </button>
+        </nav>
+        
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100 shadow-md">
+            <div class="container mx-auto px-6 py-3 flex flex-col space-y-4">
+                <a href="#about" class="text-gray-600 py-2 hover:text-primary transition-colors">About</a>
+                <a href="#skills" class="text-gray-600 py-2 hover:text-primary transition-colors">Skills</a>
+                <a href="#projects" class="text-gray-600 py-2 hover:text-primary transition-colors">Projects</a>
+                <a href="#certifications" class="text-gray-600 py-2 hover:text-primary transition-colors">Certifications</a>
+                <a href="#contact" class="text-gray-600 py-2 hover:text-primary transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-bg pt-32 pb-20 md:pt-40 md:pb-32">
+        <div class="container mx-auto px-6">
+            <div class="w-full max-w-3xl">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
+                    Mantharapu Joshitha Maha Lakshmi
+                </h1>
+                <p class="text-xl md:text-2xl text-blue-100 mb-8">
+                    B-Tech Student | Full Stack Developer | AWS Cloud Enthusiast | JAVA Developer
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="bg-white hover:bg-gray-100 text-primary border border-primary px-6 py-3 rounded-button font-medium transition-colors whitespace-nowrap">
+                        Get in Touch
+                    </a>
+                    <a href="Joshitha_Mantharapu_Resume.pdf" download class="bg-white hover:bg-gray-100 text-primary border border-primary px-6 py-3 rounded-button font-medium transition-colors whitespace-nowrap">
+    Download Resume
+</a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-16">About Me</h2>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-2/5">
+                    <img src="photo1.jpg" 
+                         alt="Mantharapu Joshitha" 
+                         class="w-full h-auto rounded-lg shadow-lg object-cover object-top">
+                </div>
+                
+                <div class="w-full md:w-3/5">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Hello, I'm Joshitha!</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+    I am a passionate B-Tech student at Aditya University with a strong academic record (CGPA: 8.28). My journey in technology is driven by curiosity and a dedication to building impactful software through structured code and creative design.
+</p>
+
+<p class="text-gray-600 mb-6 leading-relaxed">
+    With a strong focus on Java programming, GUI development, competitive coding, and cloud computing, I’ve built efficient desktop applications and deployed scalable web solutions using AWS. I enjoy solving complex problems, continuously learning new technologies, and turning ideas into practical, real-world projects.
+</p>                    
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 text-primary mr-3">
+                                <i class="ri-graduation-cap-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Education</h4>
+                                <p class="text-gray-600">B-Tech, Aditya University</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 text-primary mr-3">
+                                <i class="ri-award-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">CGPA</h4>
+                                <p class="text-gray-600">8.31/10.0</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 text-primary mr-3">
+                                <i class="ri-code-s-slash-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Specialization</h4>
+                                <p class="text-gray-600">Web Development, Cloud Computing, java Development</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 text-primary mr-3">
+                                <i class="ri-map-pin-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Location</h4>
+                                <p class="text-gray-600">Andhra Pradesh, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="inline-block bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-button font-medium transition-colors whitespace-nowrap">
+                        Let's Connect
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="skills" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-16">Skills</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="skill-card bg-white p-8 rounded-lg shadow-sm transition-all duration-300">
+                <div class="w-14 h-14 flex items-center justify-center rounded-full bg-blue-100 text-primary mb-6">
+                    <i class="ri-code-line ri-2x"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Programming Languages</h3>
+                <div class="space-y-4">
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">Java</span><span class="text-gray-500">95%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 95%"></div></div></div>
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">Python</span><span class="text-gray-500">85%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div></div>
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">C</span><span class="text-gray-500">70%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 70%"></div></div></div>
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">C++</span><span class="text-gray-500">70%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 70%"></div></div></div>
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">JavaScript</span><span class="text-gray-500">75%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 75%"></div></div></div>
+                </div>
+            </div>
+
+            <div class="skill-card bg-white p-8 rounded-lg shadow-sm transition-all duration-300">
+                <div class="w-14 h-14 flex items-center justify-center rounded-full bg-blue-100 text-primary mb-6">
+                    <i class="ri-layout-masonry-line ri-2x"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Frontend & MERN Stack</h3>
+                <div class="space-y-4">
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">HTML</span><span class="text-gray-500">95%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 95%"></div></div></div>
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">CSS</span><span class="text-gray-500">90%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 90%"></div></div></div>
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">Bootstrap</span><span class="text-gray-500">85%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div></div>
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">JavaScript</span><span class="text-gray-500">85%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div></div>
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">React.js</span><span class="text-gray-500">85%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div></div>
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">Node.js</span><span class="text-gray-500">80%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 80%"></div></div></div>
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">Express.js</span><span class="text-gray-500">80%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 80%"></div></div></div>
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">MongoDB</span><span class="text-gray-500">70%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 70%"></div></div></div>
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">Responsive Design</span><span class="text-gray-500">85%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div></div>
+                </div>
+            </div>
+
+            <div class="skill-card bg-white p-8 rounded-lg shadow-sm transition-all duration-300">
+                <div class="w-14 h-14 flex items-center justify-center rounded-full bg-blue-100 text-primary mb-6">
+                    <i class="ri-cloud-line ri-2x"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Cloud Technologies</h3>
+                <div class="space-y-4">
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">AWS S3</span><span class="text-gray-500">90%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 90%"></div></div></div>
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">AWS EC2</span><span class="text-gray-500">80%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 80%"></div></div></div>
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">AWS Lambda</span><span class="text-gray-500">75%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 75%"></div></div></div>
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">DynamoDB</span><span class="text-gray-500">65%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 65%"></div></div></div>
+                </div>
+            </div>
+
+            <div class="skill-card bg-white p-8 rounded-lg shadow-sm transition-all duration-300">
+                <div class="w-14 h-14 flex items-center justify-center rounded-full bg-blue-100 text-primary mb-6">
+                    <i class="ri-tools-line ri-2x"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Development Tools & IDEs</h3>
+                <div class="space-y-4">
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">Git</span><span class="text-gray-500">85%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div></div>
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">VS Code</span><span class="text-gray-500">90%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 90%"></div></div></div>
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">Eclipse / NetBeans</span><span class="text-gray-500">80%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 80%"></div></div></div>
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">Java Swing / AWT</span><span class="text-gray-500">90%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 90%"></div></div></div>
+                </div>
+            </div>
+
+            <div class="skill-card bg-white p-8 rounded-lg shadow-sm transition-all duration-300">
+                <div class="w-14 h-14 flex items-center justify-center rounded-full bg-blue-100 text-primary mb-6">
+                    <i class="ri-database-2-line ri-2x"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Databases</h3>
+                <div class="space-y-4">
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">MySQL</span><span class="text-gray-500">85%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div></div>
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">MongoDB</span><span class="text-gray-500">70%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 70%"></div></div></div>
+                </div>
+            </div>
+
+            <div class="skill-card bg-white p-8 rounded-lg shadow-sm transition-all duration-300">
+                <div class="w-14 h-14 flex items-center justify-center rounded-full bg-blue-100 text-primary mb-6">
+                    <i class="ri-team-line ri-2x"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Professional Skills</h3>
+                <div class="space-y-4">
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">Problem Solving</span><span class="text-gray-500">95%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 95%"></div></div></div>
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">Communication</span><span class="text-gray-500">90%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 90%"></div></div></div>
+                    <div><div class="flex justify-between mb-1"><span class="text-gray-700">Teamwork</span><span class="text-gray-500">85%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+   <section id="projects" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-16">Featured Projects</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Project 1: SwiftShop Java GUI App -->
+            <div class="project-card bg-white border border-gray-100 rounded-lg overflow-hidden shadow-sm transition-all duration-300">
+                <div class="h-48 overflow-hidden">
+                    <img src="project1.jpg" alt="SwiftShop Java GUI App" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">SwiftShop - Java GUI App</h3>
+                    <p class="text-gray-600 mb-4">
+                        Developed a desktop-based e-commerce application using Java Swing with product catalog, shopping cart, and billing features.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="tag">Java</span>
+                        <span class="tag">Swing</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">JDBC</span>
+                    </div>
+                    <a href="#" class="project-link">View Project <i class="ri-arrow-right-line align-middle ml-1"></i></a>
+                </div>
+            </div>
+
+            <!-- Project 2: AWS Static Website Hosting -->
+            <div class="project-card bg-white border border-gray-100 rounded-lg overflow-hidden shadow-sm transition-all duration-300">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://readdy.ai/api/search-image?query=professional%20screenshot%20of%20AWS%20static%20website%20hosting%20dashboard%2C%20clean%20interface%2C%20showing%20S3%20bucket%20configuration%2C%20website%20endpoint%20URL%2C%20modern%20web%20interface%2C%20technical%20display&width=600&height=400&seq=project1&orientation=landscape" alt="AWS Static Website Hosting" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">AWS Static Website Hosting</h3>
+                    <p class="text-gray-600 mb-4">
+                        Hosted a static website on AWS S3, ensuring secure access and public availability through bucket policies and hosting configurations.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="tag">AWS</span>
+                        <span class="tag">S3</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                    </div>
+                    <a href="#" class="project-link">View Project <i class="ri-arrow-right-line align-middle ml-1"></i></a>
+                </div>
+            </div>
+
+            <!-- Project 3: FitAI – Diet Planner -->
+            <div class="project-card bg-white border border-gray-100 rounded-lg overflow-hidden shadow-sm transition-all duration-300">
+                <div class="h-48 overflow-hidden">
+                    <img src="project3.jpg" alt="FitAI Diet Planner" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">FitAI - Personal Diet Planner</h3>
+                    <p class="text-gray-600 mb-4">
+                        Designed an AI-powered personal diet planner using smart inputs to generate personalized nutrition plans with a modern UI.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="tag">AI</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                    </div>
+                    <a href="#" class="project-link">View Project <i class="ri-arrow-right-line align-middle ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-12">
+            <a href="#" class="inline-block bg-white hover:bg-gray-50 text-primary border border-primary px-6 py-3 rounded-button font-medium transition-colors whitespace-nowrap">
+                View All Projects <i class="ri-arrow-right-line align-middle ml-1"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+    <section id="certifications" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-16">Certifications</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="cert-card bg-white p-6 rounded-lg shadow-sm transition-all duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-600 mr-4">
+                        <i class="ri-amazon-line ri-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800">AWS Certified Developer – Associate</h3>
+                </div>
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-start">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-0.5">
+                            <i class="ri-building-line"></i>
+                        </div>
+                        <p class="text-gray-600">Amazon Web Services</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-0.5">
+                            <i class="ri-calendar-line"></i>
+                        </div>
+                        <p class="text-gray-600">Issued: June 2025</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-0.5">
+                            <i class="ri-time-line"></i>
+                        </div>
+                        <p class="text-gray-600">Valid until: June 2028</p>
+                    </div>
+                </div>
+                <a href="#" class="inline-block text-primary hover:text-blue-700 font-medium transition-colors">
+                    Verify Certificate <i class="ri-external-link-line align-middle ml-1"></i>
+                </a>
+            </div>
+
+            <div class="cert-card bg-white p-6 rounded-lg shadow-sm transition-all duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-red-600 mr-4">
+                        <i class="ri-red-hat-line ri-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800">RedHat Certified System Administrator</h3>
+                </div>
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-start">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-0.5">
+                            <i class="ri-building-line"></i>
+                        </div>
+                        <p class="text-gray-600">Red Hat, Inc.</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-0.5">
+                            <i class="ri-calendar-line"></i>
+                        </div>
+                        <p class="text-gray-600">Issued: March 2024</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-0.5">
+                            <i class="ri-time-line"></i>
+                        </div>
+                        <p class="text-gray-600">Valid until: March 2027</p>
+                    </div>
+                </div>
+                <a href="#" class="inline-block text-primary hover:text-blue-700 font-medium transition-colors">
+                    Verify Certificate <i class="ri-external-link-line align-middle ml-1"></i>
+                </a>
+            </div>
+
+            <div class="cert-card bg-white p-6 rounded-lg shadow-sm transition-all duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 mr-4">
+                        <i class="ri-code-box-line ri-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800">Pearson IT Specialist in Java</h3>
+                </div>
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-start">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-0.5">
+                            <i class="ri-building-line"></i>
+                        </div>
+                        <p class="text-gray-600">Pearson Education</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-0.5">
+                            <i class="ri-calendar-line"></i>
+                        </div>
+                        <p class="text-gray-600">Issued: January 2024</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-0.5">
+                            <i class="ri-time-line"></i>
+                        </div>
+                        <p class="text-gray-600">No Expiration</p>
+                    </div>
+                </div>
+                <a href="#" class="inline-block text-primary hover:text-blue-700 font-medium transition-colors">
+                    Verify Certificate <i class="ri-external-link-line align-middle ml-1"></i>
+                </a>
+            </div>
+
+            <div class="cert-card bg-white p-6 rounded-lg shadow-sm transition-all duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 mr-4">
+                        <i class="ri-html5-line ri-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800">Pearson IT Specialist in HTML & CSS</h3>
+                </div>
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-start">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-0.5">
+                            <i class="ri-building-line"></i>
+                        </div>
+                        <p class="text-gray-600">Pearson Education</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-0.5">
+                            <i class="ri-calendar-line"></i>
+                        </div>
+                        <p class="text-gray-600">Issued: December 2023</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-0.5">
+                            <i class="ri-time-line"></i>
+                        </div>
+                        <p class="text-gray-600">No Expiration</p>
+                    </div>
+                </div>
+                <a href="#" class="inline-block text-primary hover:text-blue-700 font-medium transition-colors">
+                    Verify Certificate <i class="ri-external-link-line align-middle ml-1"></i>
+                </a>
+            </div>
+
+            <div class="cert-card bg-white p-6 rounded-lg shadow-sm transition-all duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 mr-4">
+                        <i class="ri-python-line ri-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800">Pearson IT Specialist in Python</h3>
+                </div>
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-start">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-0.5">
+                            <i class="ri-building-line"></i>
+                        </div>
+                        <p class="text-gray-600">Pearson Education</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-0.5">
+                            <i class="ri-calendar-line"></i>
+                        </div>
+                        <p class="text-gray-600">Issued: February 2024</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-0.5">
+                            <i class="ri-time-line"></i>
+                        </div>
+                        <p class="text-gray-600">No Expiration</p>
+                    </div>
+                </div>
+                <a href="#" class="inline-block text-primary hover:text-blue-700 font-medium transition-colors">
+                    Verify Certificate <i class="ri-external-link-line align-middle ml-1"></i>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-16">Get In Touch</h2>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="w-full lg:w-1/2">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="John Doe" required>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="john@example.com" required>
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="How can I help you?" required>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Your message here..." required></textarea>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <input type="checkbox" id="consent" name="consent" class="mr-3" required>
+                            <label for="consent" class="text-sm text-gray-600">I consent to having this website store my submitted information so they can respond to my inquiry.</label>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-button font-medium transition-colors whitespace-nowrap">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="w-full lg:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-lg h-full">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 text-primary mr-4">
+                                    <i class="ri-mail-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Email</h4>
+                                    <a href="mailto:joshitha.mantharapu@example.com" class="text-gray-600 hover:text-primary transition-colors">joshitha1703@example.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 text-primary mr-4">
+                                    <i class="ri-phone-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Phone</h4>
+                                    <p class="text-gray-600">+91 92473 17589</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 text-primary mr-4">
+                                    <i class="ri-map-pin-line ri-lg"></i>
+                                    </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Location</h4>
+                                    <p class="text-gray-600">Kakinada, Andhra Pradesh, India</p>
+                                </div>
+                            </div>
+                            
+                            <div class="pt-6">
+                                <h4 class="font-medium text-gray-800 mb-4">Connect with me</h4>
+                                <div class="flex space-x-4">
+                                    <a href="https://www.linkedin.com/in/joshitha-mantharapu-443159258/" class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors">
+                                        <i class="ri-linkedin-fill ri-lg"></i>
+                                    </a>
+                                    <a href="https://github.com/Joshitha17" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 text-white hover:bg-gray-900 transition-colors">
+                                        <i class="ri-github-fill ri-lg"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-400 text-white hover:bg-blue-500 transition-colors">
+                                        <i class="ri-twitter-fill ri-lg"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-red-500 text-white hover:bg-red-600 transition-colors">
+                                        <i class="ri-instagram-fill ri-lg"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-2xl font-semibold mb-2">Mantharapu Joshitha</h3>
+                    <p class="text-gray-400">B-Tech Student | Web Developer | AWS Cloud Enthusiast | JAVA Developer</p>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="#about" class="text-gray-300 hover:text-white transition-colors">About</a>
+                    <a href="#skills" class="text-gray-300 hover:text-white transition-colors">Skills</a>
+                    <a href="#projects" class="text-gray-300 hover:text-white transition-colors">Projects</a>
+                    <a href="#certifications" class="text-gray-300 hover:text-white transition-colors">Certifications</a>
+                    <a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a>
+                </div>
+            </div>
+            
+            <hr class="border-gray-700 my-8">
+            
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2025 Mantharapu Joshitha. All rights reserved.</p>
+                
+                <div class="flex space-x-4">
+                    <a href="https://www.linkedin.com/in/joshitha-mantharapu-443159258/" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="ri-linkedin-fill ri-lg"></i>
+                    </a>
+                    <a href="https://github.com/Joshitha17" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="ri-github-fill ri-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="ri-twitter-fill ri-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="ri-instagram-fill ri-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
+        <i class="ri-arrow-up-line ri-lg"></i>
+    </button>
+
+    <script id="navigation-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                
+                if (mobileMenu.classList.contains('hidden')) {
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+                } else {
+                    mobileMenuButton.innerHTML = '<i class="ri-close-line ri-lg"></i>';
+                }
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script id="back-to-top-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopButton = document.getElementById('back-to-top');
+            
+            // Show/hide back to top button based on scroll position
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                }
+            });
+            
+            // Scroll to top when button is clicked
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+    <script id="contact-form-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+                
+                // Here you would typically send the form data to a server
+                // For this example, we'll just show a success message
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Show success message (you could create a more sophisticated notification)
+                alert(`Thank you, ${name}! Your message has been sent successfully. I'll get back to you soon.`);
+            });
+        });
+    </script>
+
+    <script id="skills-animation-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate progress bars when they come into view
+            const progressBars = document.querySelectorAll('.progress-fill');
+            
+            const animateProgressBars = () => {
+                progressBars.forEach(bar => {
+                    const rect = bar.getBoundingClientRect();
+                    const isVisible = (rect.top <= window.innerHeight) && (rect.bottom >= 0);
+                    
+                    if (isVisible) {
+                        const width = bar.parentElement.previousElementSibling.querySelector('.text-gray-500').textContent;
+                        bar.style.width = width;
+                    } else {
+                        bar.style.width = '0';
+                    }
+                });
+            };
+            
+            // Initial check
+            animateProgressBars();
+            
+            // Check on scroll
+            window.addEventListener('scroll', animateProgressBars);
+        });
+    </script>
+</body>
+</html>
